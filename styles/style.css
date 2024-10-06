@@ -193,6 +193,9 @@ header .contact-info {
   min-height: 563px; /*задал более мягкое свойство*/
   /* убрал overflow: hidden, так как ничего здесь не нужно обрезать*/
   flex-grow: 1; /*стилизация карточек при для переноса на другую строку*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .card-link {
