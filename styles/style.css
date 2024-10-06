@@ -72,9 +72,18 @@ header .contact-info {
 /* Cover */
 
 .cover {
+  position: relative;
   background: url('../images/cover.jpg') center/cover;
   color: #fff;
   margin-bottom: 179px;
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 165px 50px 50px;
 }
 
 .cover-title {
@@ -105,8 +114,9 @@ header .contact-info {
 }
 
 .overlay {
-  height: inherit;
-  padding: 165px 50px 50px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -133,8 +143,10 @@ header .contact-info {
 }
 
 .bet-button {
+  cursor: pointer; /*Добавил cursor: pointer*/
+  font-family: 'Raleway', sans-serif; /*Указал шрифт для кнопки, так как он не наследуется*/
+  font-weight: 500; /*Указал верный font-weight*/
   font-size: 22px;
-  font-weight: 400;
   text-transform: uppercase;
   background: none;
   border: 1px solid #fff;
@@ -172,13 +184,20 @@ header .contact-info {
   padding: 0;
   margin: 0;
   margin-bottom: 30px;
+  flex-wrap: wrap; /*стилизация карточек при для переноса на другую строку*/
 }
 
 .lots-card-list-item {
+  position: relative;
   width: 334px;
-  height: 563px;
-  overflow: hidden;
+  min-height: 563px; /*задал более мягкое свойство*/
+  /* убрал overflow: hidden, так как ничего здесь не нужно обрезать*/
+  flex-grow: 1; /*стилизация карточек при для переноса на другую строку*/
 }
+
+.card-link {
+  text-decoration: none;
+} /*убрал подчеркивание текста у текста карточек, при этом сохранил для title*/
 
 .card {
   padding: 51px 40px 48px;
@@ -191,17 +210,6 @@ header .contact-info {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 0;
 }
 
 .card-title {
@@ -220,19 +228,19 @@ header .contact-info {
 }
 
 .card-type-film {
-  background-image: url('/images/card-lot-01.jpg');
+  background-image: url('../images/card-lot-01.jpg'); /*исправил путь у каточек*/
 }
 
 .card-type-book {
-  background-image: url('/images/card-lot-02.jpg');
+  background-image: url('../images/card-lot-02.jpg'); /*исправил путь у каточек*/
 }
 
 .card-type-picture {
-  background-image: url('/images/card-lot-03.jpg');
+  background-image: url('../images/card-lot-03.jpg'); /*исправил путь у каточек*/
 }
 
 .lots-look-more-link {
-  margin-left: 40px;
+  margin-left: 41px;
   margin-top: 30px;
   font-weight: 400;
   font-size: 20px;
@@ -259,7 +267,7 @@ header .contact-info {
   height: 240px;
   border-radius: 50%;
   background: #000;
-  margin-left: 47px;
+  margin-left: 51px;
 }
 
 .about-logo-image {
@@ -285,6 +293,29 @@ header .contact-info {
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
+}
+
+.about-text:nth-of-type(1) {
+  letter-spacing: 0.01em;
+}
+
+.about-text span:nth-of-type(2) {
+  letter-spacing: 0.02em;
+}
+
+.about-text span:nth-of-type(3) {
+  letter-spacing: -0.01em;
+}
+
+.about-text span:nth-of-type(4) {
+  letter-spacing: 0.03em;
+}
+
+.about-text:nth-of-type(2) span:nth-of-type(1) {
+  letter-spacing: 0.04em;
+}
+
+.about-text:nth-of-type(2) span:nth-of-type(1) {
   letter-spacing: 0.01em;
 }
 
