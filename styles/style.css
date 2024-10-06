@@ -203,7 +203,7 @@ header .contact-info {
 } /*убрал подчеркивание текста у текста карточек, при этом сохранил для title*/
 
 .card {
-  padding: 51px 40px 48px;
+  padding: 50px 42px 48px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
